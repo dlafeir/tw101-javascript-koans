@@ -27,3 +27,27 @@
 */
 
 // Write your JavaScript here
+
+function checkForValidNote(number){
+ return (number === 5 ||
+         number === 10 ||
+         number === 20 ||
+         number === 50 ||
+         number === 100 ||
+         number === 500 ||
+         number === 1000)
+}
+
+function addUpAllTheseNotes(){
+ var sum = 0;
+ var invalidNote = false;
+ $.each(arguments, function(index, value){
+  if(checkForValidNote(value) && invalidNote === false){
+   sum += value;
+  }
+  else {
+   invalidNote = true;
+  }
+ });
+ $('#problem4Answer').html(sum);
+}

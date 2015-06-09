@@ -34,3 +34,23 @@
  */
 
 // Write your JavaScript here
+
+function insertIntoHTML(stringToPrint){
+    $('#advertisement').html(stringToPrint);
+}
+
+function printAdvertisement(arrayOfAdvertisingTexts){
+    var stringToPrint = ""
+    $.each(arrayOfAdvertisingTexts, function(index, ad){
+        if(index === 1){
+            ad.reverse();
+            stringToPrint += ad.join(" ");
+        }
+        else {
+            stringToPrint += ad.join(" ");
+        }
+        stringToPrint += " ";
+    });
+    insertIntoHTML(stringToPrint);
+}
+
